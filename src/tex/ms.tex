@@ -275,12 +275,12 @@ We focus on the technical challenges for imaging a rocky terrestrial planet arou
 \begin{tabular}{@{}l|l|l|l@{}}
 \hline
 $i$ & The imaginary unit & $c$ & Speed of light in a vacuum \\\hline
-$\vec{E}$ & Electric field & $\vec{H}$ & Magnetic field \\\hline
-$\mathcal{D}$ & Displacement field & $\mathcal{B}$ & Magnetizing field \\\hline
+$\vec{E}$ & Electric field & $\vec{H}$ & Magnetizing field \\\hline
+$\mathcal{D}$ & Electric Displacement & $\mathcal{B}$ & Magnetic field \\\hline
 $\epsilon$ & Electric permittivity & $\epsilon_0$ & Electric permittivity of vacuum \\\hline
-$\mu$ & Magnetic permittivity & $\mu_0$ & Magnetic permittivity of vacuum \\\hline
-$\omega$ & Wavenumber & $\vec{k}$ & Wavevector \\\hline
-$\lambda$ & Wavelength & $\lambda_0$ & Center wavelength in the bandpass \\\hline
+$\mu$ & Magnetic permeability & $\mu_0$ & Magnetic permeability of vacuum \\\hline
+$\omega$ & Angular frequency & $\vec{k}$ & Wave vector \\\hline
+$\lambda$ & Wavelength & $\lambda_0$ & Central wavelength in the bandpass \\\hline
 $\Pi$ & The telescope pupil function & $\Delta\lambda$ & The width of the bandpass \\\hline
 $D$ & Diameter of the pupil & $n$ & (Complex) refractive index of macroscopic media \\\hline
 $\mathcal{F}_{x,y}[\cdot]$ & Fourier transform operator & $\mathcal{F}^{-1}_{x,y}[\cdot]$ & Inverse Fourier transform operator \\\hline
@@ -297,8 +297,8 @@ This time-dependent interaction is described by Maxwell's equations (with releva
 
 \begin{equation}
 \begin{aligned}
-\frac{\partial\mathcal{D}}{\partial t} \quad & = \quad \nabla\times\mathcal{H},   & \quad \text{(Faraday's law)} \\[5pt]
-\frac{\partial\mathcal{B}}{\partial t} \quad & = \quad -\nabla\times\mathcal{E},  & \quad \text{(Ampere's Law)}   \\[5pt]
+\frac{1}{c}\frac{\partial\mathcal{D}}{\partial t} \quad & = \quad \nabla\times\mathcal{H},   & \quad \text{(Faraday's law)} \\[5pt]
+\frac{1}{c}\frac{\partial\mathcal{B}}{\partial t} \quad & = \quad -\nabla\times\mathcal{E},  & \quad \text{(Ampere's Law)}   \\[5pt]
 \nabla\cdot\mathcal{B}                 \quad & = \quad 0,                         & \quad \text{(Gauss's law)}   \\[5pt]
 \nabla\cdot\mathcal{D}                 \quad & = \quad 0.                         & \quad \text{(Coulomb's law)}
 \end{aligned}
@@ -318,10 +318,10 @@ This gives us the classic wave equation if we assume that the EM wave propagates
 \begin{equation}
 \label{eq:wave_eq}
 \begin{aligned}
-\mu \epsilon \frac{\partial^2 \mathcal{E}}{\partial t^2} - \nabla^2\mathcal{E} = 0 .
+\frac{\mu \epsilon}{c^2} \frac{\partial^2 \mathcal{E}}{\partial t^2} - \nabla^2\mathcal{E} = 0 .
 \end{aligned}
 \end{equation}
-We consider a purely monochromatic EM wave with frequency $\omega$.
+We consider a purely monochromatic EM wave with angular frequency $\omega$.
 %
 The wave function is then $\mathcal{E}=\psi(r) e^{iwt}$ with $\psi(r)$ describing the spatial distribution.
 %
@@ -379,7 +379,11 @@ The far-field approximation ($z \gg x, y$) and the substitution $\theta_x = \fra
 \mathcal{E}(\theta_x, 
 \theta_y) \propto \iint_{-\infty}^{\infty} \mathcal{E}(u, v) e^{-i2\pi(\theta_x u + \theta_y v)} \mathrm{d}u \mathrm{d}v.
 \end{equation}
-This shows that the far-field distribution of an electromagnetic wave is it's Fourier transform. A perfectly aligned lens, or the mirrors of a telescope, brings rays that come from infinity to the focal point. This is identical to a far-field transform, and therefore the operation of a lens can be described by the Fraunhofer diffraction integral.
+This shows that the far-field distribution of an electromagnetic wave is its Fourier transform.
+%
+A perfectly aligned lens, or the mirrors of a telescope, brings rays that come from infinity to the focal point.
+%
+This is identical to a far-field transform, and therefore the operation of a lens can be described by the Fraunhofer diffraction integral.
 
 The \ac{psf} is defined as the response function of an optical system to a point source at infinity.
 %
