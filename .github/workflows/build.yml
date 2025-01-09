@@ -18,8 +18,8 @@ jobs:
         id: build
         with:
           showyourwork-spec: git+https://github.com/showyourwork/showyourwork
+          conda-cache-number: null
         uses: HealthyPear/showyourwork-action@fix-python-version
         env:
           SANDBOX_TOKEN: ${{ secrets.SANDBOX_TOKEN }}
           OVERLEAF_TOKEN: ${{ secrets.OVERLEAF_TOKEN }}
-          CACHE_NUMBER: 0
