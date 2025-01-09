@@ -20,7 +20,7 @@ wf = Wavefront(aperture)
 wf.total_power = 1
 norm = prop(wf).power.max()
 
-aplc_amp = read_field(str(paths.data/'aplc_amplitude_example.fits'))
+aplc_amp = read_field(str(paths.scripts/'data/aplc_amplitude_example.fits.gz'))
 pre_apodizer = Apodizer(aplc_amp)
 
 # Make the focal plane mask

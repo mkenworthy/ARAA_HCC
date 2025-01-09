@@ -121,10 +121,10 @@ dark_hole_labels = ['circular', 'annular', 'dshaped', 'rectangular']
 dark_hole_titles = ['360 degree', '180 degree', 'D shaped', 'Rectangular']
 for di, (label,ti) in enumerate(zip(dark_hole_labels,dark_hole_titles)):
 	if uses_phase[di]:
-		dark_hole_phase = read_field(str(paths.data / 'app_phase_{:s}_example.fits'.format(label)))
+		dark_hole_phase = read_field(str(paths.scripts/'data/app_phase_{:s}_example.fits.gz'.format(label)))
 		app.apodization = np.exp(1j * dark_hole_phase)
 	else:
-		dark_hole_amplitude = read_field(str(paths.data / 'spp_amplitude_example.fits'))
+		dark_hole_amplitude = read_field(str(paths.scripts/'data/spp_amplitude_example.fits.gz'))
 		app.apodization = dark_hole_amplitude
 
 	wf_app = app(wf)

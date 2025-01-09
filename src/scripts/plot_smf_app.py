@@ -14,7 +14,7 @@ focal_grid = make_focal_grid(q=15, num_airy=6)
 prop = FraunhoferPropagator(grid, focal_grid)
 
 # Setup the coronagraph
-app_phase = read_field(str(paths.data/'smf_app_phase_example.fits'))
+app_phase = read_field(str(paths.scripts/'data/smf_app_phase_example.fits.gz'))
 app = PhaseApodizer(app_phase)
 
 separation = 2.5
