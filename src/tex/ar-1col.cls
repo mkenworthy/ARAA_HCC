@@ -965,7 +965,7 @@
 \fi%
 %%
 \@ifpackageloaded{hyperref}{%
-  \def\@linkcolor{green}%
+%  \def\@linkcolor{green}%
   \def\termkey#1{\hyperlink{key#1}{#1}}%
   \def\armarginnoteentry#1#2{\par\addvspace{4\p@}\noindent{\fignum@color{\sffamily\bfseries#1:\hypertarget{key#1}{}}}\ #2\par}%
 }{%

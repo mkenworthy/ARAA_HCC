@@ -10,7 +10,7 @@
 \usepackage[version=4]{mhchem}
 \usepackage{booktabs}% http://ctan.org/pkg/booktabs
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
-\hypersetup{colorlinks=true,allcolors=[rgb]{0,0,0.8}}
+%\hypersetup{colorlinks=true}
 
 \newcommand{\kms}{km~s$^{-1}$}
 \newcommand{\mum}{$\mu$m}
@@ -133,7 +133,17 @@
 \DeclareMathOperator*{\argmax}{arg\,max}
 
 \newcommand{\project}[1]{\textsf{#1}}
-
+\hypersetup{%
+        colorlinks,
+        breaklinks=true,
+        plainpages=false,%
+        citecolor=[rgb]{0,0.20,0.45},
+        linkcolor=[rgb]{0,0.20,0.45},
+        urlcolor=[rgb]{0,0.20,0.45},
+        bookmarksopen=true,%
+        bookmarksnumbered=false,%
+        bookmarksdepth=5%
+}
 % Document starts
 \begin{document}
 
@@ -187,7 +197,7 @@ We detail the working principles of coronagraphs both in laboratory and on-sky w
 %Table of Contents
 \tableofcontents
 
-\section{INTRODUCTION}
+\section{Introduction}
 \label{sec:intro}
 
 % High contrast imaging, Lyot corongraph, 2000's development
@@ -196,15 +206,15 @@ We detail the working principles of coronagraphs both in laboratory and on-sky w
 
 Initially developed to image the Sun's corona without the need for a Solar eclipse \citep{Lyot33}, one of the most significant science drivers for the latest coronagraphs is in the detection and characterisation of circumstellar material and planets around nearby stars.
 %
-Young self-luminous gas giant exoplanets have been discovered around young stars \citep[see ][ for a review of these detections]{Zurlo24} both in the nearby Galactic field and further away in young stellar OB associations (out to 400 pc), typically these exoplanets have luminosities of $10^{-4}-10^{-6}$ of their parent star at angular separations up to a few arcseconds. 
+Young self-luminous gas giant exoplanets have been directly imaged at infrared wavelengths around young stars \citep[see ][ for a review of these detections]{Zurlo24} both in the nearby Galactic field and further away in young stellar OB associations (out to 400 pc), typically these exoplanets have luminosities of $10^{-4}-10^{-6}$ of their parent star at angular separations up to a few arcseconds. 
 
 The search for life beyond the Earth has focused on the idea that water is an essential part of life cycles elsewhere in the Universe, as it is a polar solvent formed from two elements that are found in abundance throughout the Galaxy.
 %
 Places where water can exist in its liquid state form prime locations for these searches, notably Earth-like planets and ice moons that have a liquid water ocean underneath an ice layer.
 %
-The region around a star where liquid water can exist on the surface of a terrestrial planet (with appropriate atmospheric pressure) is referred to as the \ac{hz}; for the Sun this is from 0.9-1.2 au but this can move as the luminosity of stars change with time.
+The region around a star where liquid water can exist on the surface of a terrestrial planet (with appropriate atmospheric pressure) is referred to as the \ac{hz}; for the Sun this is from 0.9-1.2 au but this can move as the luminosity of stars evolve over time.
 
-At optical wavelengths, exoplanets are not self-luminous but instead reflect the light of their parent star.
+At visible light wavelengths, the flux from exoplanets that can be directly imaged is overwhelmingly dominated by the reflected light from their parent star.
 %
 For an Earth analogue with similar radius, albedo and effective temperature orbiting around a solar-type star 10 parsecs away, the typical amount of reflected light in the optical is $10^{-10}$ of the central star at a separation of 0.1 arcseconds at maximum elongation.
 %
@@ -261,7 +271,7 @@ For solar type stars, the contrast required in the optical wavelengths is on the
 
 The markers for biosignatures also set the parameters (such as wavelength and bandwidth) that form part of the design decision.
 %
-Spectra of Earthshine (light reflected from the Earth by the non-Sun lit portion of the Moon) from 0.5 to 2.4 microns show \ce{O2}, \ce{O3}, \ce{CO2}, \ce{CH4} and \ce{H2O} \citep{Turnbull06}, and there are many discussions about the possible biomarker molecules that should be searched for and characterised as evidence for biosignatures \citep[see the reviews of ][]{2016AsBio..16..465S,2017ARAA..55..433K,2018AsBio..18..663S}.
+Spectra of Earthshine (sunlight that is reflected off the Earth and illuminates the dark portion of the Moon) from 0.5 to 2.4 microns show \ce{O2}, \ce{O3}, \ce{CO2}, \ce{CH4} and \ce{H2O} \citep{Turnbull06}, and there are many discussions about the possible biomarker molecules that should be searched for and characterised as evidence for biosignatures \citep[see the reviews of ][]{2016AsBio..16..465S,2017ARAA..55..433K,2018AsBio..18..663S}.
 %
 It is clear that the unambiguous detection of life will require not one singular detection of a molecule, but will be the combination of several different lines of evidence.
 %
@@ -363,12 +373,12 @@ For many optical systems it is sufficient to analyze the paraxial performance.
 %
 The paraxial approximation assumes that the plane waves make small angles with respect to the z-axis which means that the $x$ and $y$ wave vector components are $k_x,k_y<<1$.
 %
-In this regime the propagation factor $k_z=\sqrt{n^2k^2 - k_{\perp}^2}\approx nk - \frac{k_{\perp}^2}{2nk}$ and the Fresnel propagation equation becomes
+In this regime the propagation factor $k_z=\sqrt{n^2k^2 - k_{\perp}^2}\approx nk - \frac{k_{\perp}^2}{2nk}$ simplifying to:
 \begin{equation}
 \label{eq:angular_spectrum2}
 \mathcal{E}(x, y, z') = e^{-ink(z'-z)} \mathcal{F}_{x,y}^{-1}\{ e^{-i\frac{k_{\perp}^2}{2nk}} \mathcal{F}_{x,y}\{\mathcal{E}(x,y,z)\}\}.
 \end{equation}
-The real space solution that is derived from the propagation equation is the classical Fresnel diffraction equation,
+The real space solution that is derived from this propagation equation is the classical Fresnel diffraction equation,
 \begin{equation}
 \label{eq:fresnel_diffraction}
 \mathcal{E}(x, y, z') = \frac{e^{-ink(z'-z)}}{\lambda z} \iint_{-\infty}^{\infty} \mathcal{E}(u, v, z) e^{\frac{ik\left[(x - u)^2 + (y - v)^2\right]}{2 (z' - z)}} \mathrm{d}u \mathrm{d}v.
@@ -664,7 +674,7 @@ Strictly this is not so much a coronagraph as a modification to the \ac{psf} of 
 %
 As long as the angular diameter of the star is smaller than the Airy core of the \ac{psf}, \ac{pp} coronagraphs are not impacted by the diameter of the star or by residual tip tilt vibrations that are not removed by the \ac{ao} control loop, making them a robust alternative to the more efficient, smaller \ac{iwa} \ac{fp} coronagraphs. 
 %
-Suppressing diffraction in the \ac{psf} requires destructive interference using coherent light from the Airy core, but at a cost in Strehl ratio of the \ac{psf}.
+Suppressing diffraction in the \ac{psf} requires destructive interference using coherent light from the Airy core, but decreases the encircled energy of the core of the \ac{psf}.
 %
 Since the exoplanet \ac{psf} is identical to the stellar \ac{psf}, the planet throughput decreases too.
 
@@ -689,7 +699,7 @@ An \ac{app} built and installed in NAOS/CONICA VLT camera \citep{Kenworthy10} le
 %
 The original algorithms found solutions with $180^\circ$ dark `D' shaped regions next to the star, but a more general theory to APP optimisation \citep{Por17} finds both 180 and 360 degree solutions and additionally finds solutions consisting of regions of integer multiples of $\pi/2$ radians.
 
-The first \ac{app} optics were chromatic: the OPD was a function of the refractive index of the transmissive material, with the suppression decreasing with increasing bandwidth.
+The first \ac{app} optics were chromatic: the Optical Path Difference (OPD) was a function of the refractive index of the transmissive material, with the suppression decreasing with increasing bandwidth.
 %
 Achromatic phase shifts can be implemented using the principle of geometric phase: the vector-APP \citep[vAPP; ][]{Snik12} replaces the classical phase pattern $\phi_{\textrm{c}}(\vec{r}) = n(\lambda) \Delta d(\vec{r})$,
 with the ``geometric phase'' \citep[known as the Pancharatnam-Berry phase; ][]{Pancharatnam,Berry}.
@@ -845,7 +855,7 @@ The introduction of complex masks that can be manufactured to the required toler
 Results from the laboratory demonstration of a \ac{piaacmc} with a segmented aperture, \citet{Marx21} show contrasts of $3\times 10^{-8}$ from $4-9$\ld{} with 2\% bandwidth.
 %
 Most recently, the laboratory demonstration of high contrast with the \ac{piaacmc} coronagraph on an obstructed and segmented aperture \citep{Belikov22} shows $1.9\times 10^{-8}$ contrast achieved in a 10\% bandwidth between $3.5-8$\ld{}.
-
+%
 Ultimately the rejected light can form the basis for a \ac{wfs} to keep the \ac{piaa} pointed and aligned with the science target, and an integrated \ac{wfs} and coronagraph with \ac{piaacmc} has been demonstrated \citep{Haffert23a}.
 
 \section{Spatial mode demultiplexing}
