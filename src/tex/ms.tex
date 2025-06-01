@@ -144,31 +144,25 @@
         bookmarksnumbered=false,%
         bookmarksdepth=5%
 }
-% Document starts
+
 \begin{document}
 
-% Page header
 \markboth{Kenworthy \& Haffert}{HCC}
 
-%TC:ignore
+% Title on one line with LARGE
+\title{\huge {\normalfont High-Contrast Coronagraphy}}
 
-% Title
-\title{High Contrast Coronagraphy}
-
-%Authors, affiliations address.
-\author{Matthew Kenworthy$^1$ and Sebastiaan Haffert$^{1,2}$
+% large and normalfont to get both names on one line
+\author{\large {\normalfont Matthew A. Kenworthy$^1$ and Sebastiaan Y. Haffert$^{1,2}$}
   \affil{$^1$Leiden Observatory, Niels Bohrweg 2, Leiden 2300RA, The Netherlands; email: kenworthy@strw.leidenuniv.nl}
   \affil{$^2$University of Arizona, Steward Observatory, 933 N. Cherry Avenue, Tucson, Arizona, United States; email: haffert@strw.leidenuniv.nl}}
 
-
-% Abstracts should include 3–5 bullet points citing actual conclusions of the review. Please limit the abstract to no more than 200 words, including the bullet points. If using TeX, use a “\hangindent=.3cm$bullet$” command at the beginning of each bullet-point paragraph. [The “\begin{itemize}” environment may require the use of a “hardwired” line return (i.e., the ”\\” command) within the environment, as lines may not automatically return in the compiled version.]
-%Abstract
 \begin{abstract}
 Imaging terrestrial exoplanets around nearby stars is a formidable technical challenge, requiring the development of coronagraphs to suppress the stellar halo of diffracted light at the location of the planet.
 %
-In this Review, we derive the science requirement for high contrast imaging, give an overview of diffraction theory and the Lyot coronagraph, and define the parameters used in our optimization.
+In this review, we derive the science requirement for high-contrast imaging, present an overview of diffraction theory and the Lyot coronagraph, and define the parameters used in our optimization.
 %
-We detail the working principles of coronagraphs both in laboratory and on-sky with current high contrast instruments, and detail the required algorithms and processes necessary for terrestrial planet imaging with the extremely large telescopes and proposed space telescope missions.
+We detail the working principles of coronagraphs both in the laboratory and on-sky with current high-contrast instruments, and we describe the required algorithms and processes necessary for terrestrial planet imaging with the extremely large telescopes and proposed space telescope missions:
 
 \begin{itemize}
     \item Imaging terrestrial planets around nearby stars is possible with \\ 
@@ -182,15 +176,16 @@ We detail the working principles of coronagraphs both in laboratory and on-sky w
     multiple closed loops providing active correction are required \\
     to reach the highest sensitivities.
     \item Polarization effects need to be mitigated for reaching $10^{-10}$ \\ contrasts whilst keeping exoplanet yields as high as possible.
-    \item Recent technology development, including photonics and MKIDs, \\
-    will be folded into high contrast instruments.
+    \item Recent technological developments, including photonics and micro-\\
+    wave kinetic inductance detectors,
+    will be folded into high-contrast \\ instruments.
 \end{itemize}
 
 \end{abstract}
 
 %Keywords, etc.
 \begin{keywords}
- Optics, coronagraphs, exoplanets, high contrast, computational methods
+ optics, coronagraphs, exoplanets, high contrast, computational methods
 \end{keywords}
 \maketitle
 
@@ -204,7 +199,7 @@ We detail the working principles of coronagraphs both in laboratory and on-sky w
 
 %TC:endignore
 
-Initially developed to image the Sun's corona without the need for a Solar eclipse \citep{Lyot33}, one of the most significant science drivers for the latest coronagraphs is in the detection and characterisation of circumstellar material and planets around nearby stars.
+Initially developed to image the Sun's corona without the need for a Solar eclipse \citep{Lyot33}, one of the most significant science drivers for the latest coronagraphs involves the detection and characterisation of circumstellar material and planets around nearby stars.
 %
 Young self-luminous gas giant exoplanets have been directly imaged at infrared wavelengths around young stars \citep[see ][ for a review of these detections]{Zurlo24} both in the nearby Galactic field and further away in young stellar OB associations (out to 400 pc), typically these exoplanets have luminosities of $10^{-4}-10^{-6}$ of their parent star at angular separations up to a few arcseconds. 
 
@@ -234,11 +229,11 @@ For solar type stars, the contrast required in the optical wavelengths is on the
   \includegraphics[width=1.0\linewidth]{figures/flux_ratio.pdf}
   \caption{Angular separation versus contrast for directly imaged exoplanets.
   %
-  The upper right part of the figure shows known self-luminous gas giant planets \citep{Lacy20}.
+  Known self-luminous gas giant planets are shown in the top right \citep{Lacy20}.
   %
-  The lines show  $5\sigma$ point source contrast limits from recent instruments and surveys.
+  The lines represent $5\sigma$ point source contrast limits from recent instruments and surveys.
   %
-  Figure plot and data from \citet{Bailey24}.
+  Figure plot and data from \citet{Bailey24} along with references for the contrast curves.
   %
   Grey triangles are the expected contrasts for reflected light from known radial velocity detected exoplanets \citep{Bataltha18}.
   %
