@@ -84,19 +84,16 @@
     \acrodefplural{wfs}[WFSs]   {Wavefront Sensors}
     \acrodefplural{elt}[ELTs]   {Extremely Large Telescopes}
     \acrodefplural{ncpa}[NCPAs] {Non-Common Path Aberrations}
-%% Preferably, put all acronym definitions in one file and load it
-%   \input{acros.tex}
 \end{acronym}
 
 \newtotcounter{citnum} %From the package documentation
 \def\oldbibitem{} \let\oldbibitem=\bibitem
 \def\bibitem{\stepcounter{citnum}\oldbibitem}
 
-% Metadata Information
 \jname{Annu. Rev. Astron. Astrophys.}
-\jvol{AA}
+\jvol{63}
 \jyear{2025}
-\doi{10.1146/TBD}
+\doi{10.1146/annurev-astro-021225-022840}
 
 % autoref formatting
 \def\sectionautorefname{Section}
@@ -183,21 +180,15 @@ We detail the working principles of coronagraphs both in the laboratory and on-s
 
 \end{abstract}
 
-%Keywords, etc.
 \begin{keywords}
- optics, coronagraphs, exoplanets, high contrast, computational methods
+optics, coronagraphs, exoplanets, high contrast, computational methods
 \end{keywords}
 \maketitle
 
-%Table of Contents
 \tableofcontents
 
 \section{Introduction}
 \label{sec:intro}
-
-% High contrast imaging, Lyot corongraph, 2000's development
-
-%TC:endignore
 
 Initially developed to image the Sun's corona without the need for a Solar eclipse \citep{Lyot33}, one of the most significant science drivers for the latest coronagraphs involves the detection and characterisation of circumstellar material and planets around nearby stars.
 %
@@ -246,20 +237,6 @@ For solar type stars, the contrast required in the optical wavelengths is on the
   The larger the point, the closer the stellar system is to the Sun.
   %
   Reflected light data from \href{https://subarutelescope.org/staff/guyon/04research.web/14hzplanetsELTs.web/catalog.web/content.html}{Guyon (2024) web page}.  
-  %{\em ELT goal:} Possible range of near-IR post-processed detection limits for next generation extremely large telescopes. 
-% -- HabEx: Goal 5-sigma post-processed contrast.  IWA $\sim$ 2.5 \ld{} @ 450nm; OWA $\sim$ 32 \ld{} at 1micron (source: B. Mennesson, personal communication)
-% -- JWST NIRCAM: 5-sigma post-processed [ADI+RDI] contrast curve for F356W-band from program ERS 1386 on HIP 65426. Data inside the nominal IWA of 0.64'' are not displayed (source: Carter+2022)
-% -- HST NICMOS: 5-sigma post-processed [KLIP + match filter] contrast curve for F160W-band; this was the BEST contrast curve from the ALICE program (HST program 7226, and others), with typical integration times of 2hr (600-1600s range). (source: E. Choquet, personal communication) Please cite \url{http://adsabs.harvard.edu/abs/2014SPIE.9143E..57C}.
-% -- HST STIS: Bar5 coronagraph 5-sigma post-processed [KLIP] contrast curve; 162sec exposure. Photon noise is a significant contributor beyond 0.7''. (source: STIS handbook) This program observed HD 38393 at 9 roll angles with 9 dithers per roll angle. No filter was used, so the bandpass is ~200-1030nm. Total exposure time = 810*.2sec = 2.7 minutes, and is therefore moderately photon limited at large angles. Assuming photon noise adds in quadrature with speckle residuals to produce the KLIP contrast, the photon noise is $>$50\% the amplitude of the speckle noise beyond $\sim$0.7''.
-% -- HST ACS: 5-sigma post-processed [simple image difference] contrast curve of 2x100sec Arcturus observation in F606W with 1.8'' occulter. The two exposures were taken 85 minutes apart, to simulate a typical 2-roll (2 orbit) ADI observation. The contrast curve is a simple difference of the images, after registration. (source: J. Krist, personal communication)
-% -- SPHERE: 5 sigma post-processed [SDI] contrast curve for an ~1hr integration on Sirius. At separations $<0.7''$ the curve is for IFS YJH, while $>0.7''$ is IRDIS K12; $0.7''$ is the crossover point where IRDIS becomes better than IFS. Integration times: IRDIS = 88 min, IFS = 59min; difference is due to detector overheads. FOV rotation = 106dgr. The SDI reduction assumes the planet-star contrast is constant at all wavelengths. (Source: Vigan et al. 2015 MNRAS 454 129)
-% -- GPI: 5-sigma post-processed [KLIP + forward model match filter] contrast curve for H-band IFS mode, 1hr integration. Calculated from an 11min H-band IFS observation of Sirius, reduced with Jean-Baptiste Ruffio's Forward Model Matched Filter code, optimized for L-type objects. The 60min column is $\sqrt(t)$ scaling from the 11min column, for a more equal comparison to the SPHERE 59min IFS contrast curve. (source: B. Macintosh, personal communication).
-% -- Roman CGI narrow FOV imaging prediction: Modeled 5-sigma post-processed [RDI\&fpp=2] contrast curve for Band 1 imaging of a V=5 G0V star with the HLC coronagraph. The model observation uses an optimistic estimate for instrument and observatory performance and for 21mo into mission. Integration time is 100hr. Updates include: flight mask, performance tables, bench warping and DM temperature stability, coating reflectivity. Source: \url{https://github.com/hsergi/Roman_Coronagraph_ETC/tree/main/tables/}, 12/02/2021 version.
-% -- Roman CGI Single Slit, Prism-based Spectroscopy prediction: Modeled 5-sigma post-processed [RDI\&fpp=1.22] contrast curve for Band 3 spectroscopy of a V=5 G0V star with the SPC bowtie coronagraph. The model observation uses an optimistic estimate for instrument and observatory and for 21mo into mission. Integration time is  400hr. Updates include: flight mask, performance tables, bench warping and DM temperature stability, coating reflectivity. Source: \url{https://github.com/hsergi/Roman_Coronagraph_ETC/tree/main/tables/}, 12/02/2021 version.
-% -- Roman CGI wide FOV imaging prediction: Modeled 5-sigma post-processed [RDI\&fpp=2] contrast curve for Band 4 imaging of a V=5 G0V star with the HLC coronagraph. The model observation uses an optimistic estimate for instrument and observatory performance and for 21mo into mission. Integration time is 100hr. Updates include: flight mask, performance tables, bench warping and DM temperature stability, coating reflectivity. Source: \url{https://github.com/hsergi/Roman_Coronagraph_ETC/tree/main/tables/}, 12/02/2021 version.
-% -- DI: Selected known self-luminous Directly Imaged (DI) exoplanets with known H-band contrasts. Predicted fluxes at Bands  1 and 3 are either from B. Lacy or from either COND $(T_{eff}\le 1200K)$ or BT-SETTL models. For COND/BT values, WFC3 filters that approximate Roman's coronagraph instrument bands were used (547nm 10\% and 763nm 10\%), because WFC3 colors are already provided with the model grids.
-% -- Earth (==1E-10) \& Jupiter (albedo=0.52) at quadrature as seen from 10 pc. (Jupiter albedo: Traub \& Oppenheimer, Direct Imaging chapter of Seager Exoplanets textbook, Table 3)
-% -- RV: Predicted reflected light flux ratios at quadrature for known RV planets, from the Imaging Mission Database. We assume clouds with $f_{sed} = 3$. Dark gray triangles signify V $<$ 5 host stars; light grey triangles signify  $5 < V < 6$ host stars. Commented lines are planets that would meet criteria, but whose host stars are known binaries and/or too large in angular diameter. See \url{https://plandb.sioslab.com/about.php} for Imaging Mission Database acknowledgements policy.
 }
   \label{fig:nstars}
 \end{figure}
@@ -403,7 +380,6 @@ We show the \acp{psf} (defined as the square of the Fourier transform of the tel
   \acp{psf} have been normalised to the peak of the \ac{psf} and are on a logarithmic scale down to $10^{-6}$.}
   \label{fig:telpsfs}
 \end{figure}
-
 
 \section{The Lyot Coronagraph}
 
@@ -1699,8 +1675,6 @@ This research has made use of NASA's Astrophysics Data System Bibliographic Serv
 %
 M.\ A.\ K.\ acknowledges useful conversations with several people (most notably
 Phil Hinz, Eric Mamajek and Andrew Skemer) at the Humble Sea Brewing Company.
-
-%This document contains \total{citnum}\ references.
 
 \bibliographystyle{ar-style2}
 \bibliography{bib}
