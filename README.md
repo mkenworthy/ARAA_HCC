@@ -19,5 +19,3 @@ The article and associated data can be compiled and built locally with:
     showyourwork build
 
 ...and the article will be built in about five minutes.
-
-An open source scientific article created using the [showyourwork](https://github.com/showyourwork/showyourwork) workflow.
